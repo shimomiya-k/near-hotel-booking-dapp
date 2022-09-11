@@ -34,3 +34,4 @@ integration-tests/target
 frontend/.parcel-cache
 frontend/dist
 contract/neardev/dev-account*
+dev.env

@@ -12,10 +12,16 @@
     "test:unit": "cd contract && cargo test",
     "test:integration": "npm run build:contract && cd integration-tests && cargo run --example integration-tests \"../contract/target/wasm32-unknown-unknown/release/hello_near.wasm\"",
     "near:login": "near login",
-    "postinstall": "cd frontend && npm install && cd .."
+    "near:create": "near create-account $SUB_ACCOUNT_NAME.$MY_CONTRACT_NAME --masterAccount $MY_CONTRACT_NAME --initialBalance 5",
+    "near:delete": "near delete $CONTRACT_NAME $MY_CONTRACT_NAME",
+    "near:view:get_rooms_registered_by_owner": "near view $CONTRACT_NAME get_rooms_registered_by_owner '{\"owner_id\": \"'$MY_CONTRACT_NAME'\"}' --accountId $MY_CONTRACT_NAME",
+    "near:exists": "near view $CONTRACT_NAME exists '{\"owner_id\": \"'$MY_CONTRACT_NAME'\", \"room_name\": \"Sun Room\"}' --accountId $MY_CONTRACT_NAME",
+    "near:call:add_room_to_owner": "near call $CONTRACT_NAME add_room_to_owner '{\"name\": \"Sun Room\", \"image\": \"URL\", \"beds\": 1, \"description\": \"This is Sun room.\", \"location\": \"Tokyo\", \"price\": \"1000000000000000000000000\"}' --accountId $MY_CONTRACT_NAME",
+    "postinstall": "cd frontend && npm install && cd ..",
+    "env:dev": "dotenv-run-script ./dev.env ./contract/neardev/dev-account.env --"
   },
   "devDependencies": {
+    "dotenv-run-script": "^0.2.0",
     "near-cli": "^3.3.0"
-  },
-  "dependencies": {}
+  }
 }
