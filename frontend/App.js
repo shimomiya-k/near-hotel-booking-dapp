@@ -7,6 +7,7 @@ import Search from "./src/pages/Search";
 import GuestBookedList from "./src/pages/GuestBookedList";
 import ManageRooms from "./src/pages/ManageRooms";
 import ManageBookings from "./src/pages/ManageBookings";
+import Upload from "./src/pages/Upload";
 
 import NavBar from "./src/components/NavBar";
 import "./assets/global.css";
@@ -64,6 +65,7 @@ const App = ({ isSignedIn, contract, wallet }) => {
             />
           }
         />
+        <Route path="/upload" element={<Upload />} />
       </Routes>
     </BrowserRouter>
   );

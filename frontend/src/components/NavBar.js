@@ -81,6 +81,10 @@ const NavBar = ({ isSignedIn, contract, wallet }) => {
                   <NavDropdown.Divider />
                   {/* HOMEへのリンク */}
                   <NavDropdown.Item href="/">Home</NavDropdown.Item>
+                  {/* UPLOADへのリンク */}
+                  <NavDropdown.Item href="/upload">
+                    Upload
+                  </NavDropdown.Item>{" "}
                 </NavDropdown>
               </>
             )}
