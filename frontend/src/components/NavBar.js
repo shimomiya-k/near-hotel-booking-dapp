@@ -6,6 +6,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
+import PropTypes from "prop-types";
+import { Wallet } from "../../near-wallet";
+import { Contract } from "../../near-interface";
+
 const NavBar = ({ isSignedIn, contract, wallet }) => {
   const navigate = useNavigate();
   const [balance, setBalance] = useState("0");
@@ -85,6 +89,12 @@ const NavBar = ({ isSignedIn, contract, wallet }) => {
       </Container>
     </Navbar>
   );
+};
+
+NavBar.propTypes = {
+  isSignedIn: PropTypes.bool,
+  wallet: PropTypes.instanceOf(Wallet),
+  contract: PropTypes.instanceOf(Contract),
 };
 
 export default NavBar;

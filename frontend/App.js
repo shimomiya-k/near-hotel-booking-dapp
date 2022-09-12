@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "regenerator-runtime/runtime";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -9,8 +10,10 @@ import ManageBookings from "./src/pages/ManageBookings";
 
 import NavBar from "./src/components/NavBar";
 import "./assets/global.css";
+import { Wallet } from "./near-wallet";
+import { Contract } from "./near-interface";
 
-export default function App({ isSignedIn, contract, wallet }) {
+const App = ({ isSignedIn, contract, wallet }) => {
   return (
     <BrowserRouter>
       <NavBar isSignedIn={isSignedIn} contract={contract} wallet={wallet} />
@@ -64,4 +67,12 @@ export default function App({ isSignedIn, contract, wallet }) {
       </Routes>
     </BrowserRouter>
   );
-}
+};
+
+App.propTypes = {
+  isSignedIn: PropTypes.bool,
+  wallet: PropTypes.instanceOf(Wallet),
+  contract: PropTypes.instanceOf(Contract),
+};
+
+export default App;

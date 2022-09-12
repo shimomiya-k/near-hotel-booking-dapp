@@ -15,7 +15,7 @@ import { setupMyNearWallet } from "@near-wallet-selector/my-near-wallet";
 
 import { formatNearAmount } from "near-api-js/lib/utils/format";
 
-const THIRTY_TGAS = "30000000000000";
+const THIRTY_TGAS = "100000000000000";
 const NO_DEPOSIT = "0";
 
 // Wallet that simplifies using the wallet selector
@@ -77,7 +77,6 @@ export class Wallet {
       finality: "final",
       account_id: this.accountId,
     });
-    console.log(res);
 
     return formatNearAmount(res.amount, 2);
   }
