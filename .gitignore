@@ -35,3 +35,6 @@ frontend/.parcel-cache
 frontend/dist
 contract/neardev/dev-account*
 dev.env
+
+# Local Netlify folder
+.netlify

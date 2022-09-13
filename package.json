@@ -24,10 +24,14 @@
     "near:call:change_status_to_stay": "near call $CONTRACT_NAME change_status_to_stay '{\"room_id\": \"'$MY_CONTRACT_NAME'Sun Room\", \"check_in_date\": \"2222-01-01\"}' --accountId $MY_CONTRACT_NAME",
     "near:call:change_status_to_available": "near call $CONTRACT_NAME change_status_to_available '{\"room_id\": \"'$MY_CONTRACT_NAME'Sun Room\", \"check_in_date\": \"2222-01-01\", \"guest_id\": \"'$MY_CONTRACT_NAME'\"}' --accountId $MY_CONTRACT_NAME",
     "postinstall": "cd frontend && npm install && cd ..",
+    "netlify:deploy": "netlify deploy --prod",
     "env:dev": "dotenv-run-script ./dev.env ./contract/neardev/dev-account.env --"
   },
   "devDependencies": {
     "dotenv-run-script": "^0.2.0",
     "near-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "netlify-cli": "^11.7.1"
   }
 }
